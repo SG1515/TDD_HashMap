@@ -48,4 +48,26 @@ public class HashMap<K,V> {
     }
 
 
+    public int size() {
+        return size;
+    }
+
+    public void remove(K key) {
+        int keyIndex = indexOfKey(key);
+
+        if (keyIndex == -1) {
+            return;
+        }
+
+        moveLeft(keys, keyIndex + 1, size - 1);
+        moveLeft(values, keyIndex + 1, size - 1);
+
+        size--;
+    }
+
+    private void moveLeft(Object[] arr, int fromIndex, int toIndex) {
+        for (int i = fromIndex; i <= toIndex; i++) {
+            arr[i - 1] = arr[i];
+        }
+    }
 }
