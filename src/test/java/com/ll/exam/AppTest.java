@@ -9,6 +9,14 @@ public class AppTest {
 
 class HashMapTest {
     @Test
+    void _2nd_get() { //덮어씌어짐을 확인
+        HashMap<String, Integer> ages = new HashMap<>();
+        ages.put("철수", 22);
+        ages.put("영희", 25);
+        assertEquals(22, ages.get("철수"));
+        assertEquals(25, ages.get("영희"));
+    }
+    @Test
     void get() {
         HashMap<String, Integer> ages = new HashMap<>();
         ages.put("철수", 22);
