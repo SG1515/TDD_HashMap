@@ -9,6 +9,15 @@ public class AppTest {
 
 class HashMapTest {
     @Test
+    void put__데이터_수정() {
+        HashMap<String, Integer> ages = new HashMap<>();
+        ages.put("철수", 22);
+        ages.put("영희", 25);
+        ages.put("영희", 27);
+
+        assertEquals(27, ages.get("영희"));
+    }
+    @Test
     void _2nd_get() { //덮어씌어짐을 확인
         HashMap<String, Integer> ages = new HashMap<>();
         ages.put("철수", 22);
